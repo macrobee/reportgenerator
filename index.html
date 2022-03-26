@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Report card comments</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans&family=Oxygen:wght@300&family=Roboto+Slab:wght@300&display=swap"
+        rel="stylesheet">
+
+</head>
+
+<body>
+    <div class="topheader">
+        <h1>Report card comment generator</h1>
+    </div>
+    <section id="uploadinfo">
+        <form>
+            <h2>Classlist upload</h2>
+            <label for="classlist">Upload your class list and information:</label>
+            <input type="file" id="course" name="upload" accept=".csv">
+
+            <br><label for="courseinfo">Input the course title:</label>
+            <input type="text" id="coursetitle" name="courseinfo" placeholder="Grade X Biology">
+
+            <br><label for="assignment1">Name of first assignment to highlight: </label>
+            <input type="text" id="ass1" name="assignment1" placeholder="Dissection Lab">
+            <br><label for="ass1skill">What general skill or learning was shown through this assignment? </label>
+            <input type="text" id="ass1skill" name="ass1skill" placeholder="identify structures of a cell">
+
+            <br><label for="assignment2">Name of second assignment to highlight: </label>
+            <input type="text" id="ass2" name="assignment2" placeholder="Field Research Study">
+            <br><label for="ass2skill">What general skill or learning was shown through this assignment? </label>
+            <input type="text" id="ass2skill" name="ass2skill"
+                placeholder="design procedures according to the scientific method">
+
+            <br><label for="final">Is this the final report card? </label>
+            <input type="checkbox" id="finalreport" name="final">
+            <br><button type="submit">Submit</button>
+        </form>
+
+        <div class="side">
+            <h2>Sample comment:</h2>
+            <p id="sample"></p>
+        </div>
+    </section>
+    <section id="comments">
+        <h2>Student comments:</h2>
+        <ol></ol>
+    </section>
+    <script src="comments.js"></script>
+</body>
+
+</html>
