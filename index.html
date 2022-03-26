@@ -19,12 +19,47 @@
 <body>
     <div class="topheader">
         <h1>Report card comment generator</h1>
+        <button id="infomenu">?</button>
+    </div>
+    <div id="infopage">
+        <h2>How to use the report card comment generator</h2>
+        <p>To use the generator, you need to input a couple of things:</p>
+        <ol>
+            <li>File containing student names, genders, overall grade, and 1 learning skill to improve on</li>
+            <li>Course name (eg. "Grade 8 Biology", "Media Studies", "MCV4U", etc.)</li>
+            <li>Name of 2 assignments to highlight in the comments</li>
+            <li>Learning outcome of 2 assignments to highlight</li>
+            <li>Whether this is the final report card (this adds a well-wishing statement)</li>
+        </ol>
+        <h3>Gradebook template</h3>
+        <p>You can download this template on the main page.</p>
+        <img src="screenshot.png" alt="screenshot of input template" width="500px">
+        <h3>Additional notes:</h3>
+        <ul>
+            <li>Please ensure your file is saved in the csv format. Csv or Comma-separated values is a computer-friendly
+                format that allows this
+                app to read your spreadsheet data.</li>
+            <li>Student names should be typed as you would like it to be written in their comments</li>
+            <li>Gender is not case sensitive, but if you put anything other than "f" or "m" the pronouns will default to
+                they/theirs</li>
+            <li>Overall mark must be a number from 0 to 100</li>
+            <li>"Area to improve" can be one of the 6 learning skills. Please check that your inputs are spelled
+                correctly</li>
+            <li>Once you click "Submit", your comments will be generated below and you can copy + paste them from this
+                page</li>
+            <li>There is currently no functionality for the assignment marks so you can put whatever you want there.
+                Hopefully I'll get around to adding this.</li>
+            <li>Download link for template is broken and I haven't figure out how to fix it. <a href="https://github.com/macrobee/reportgenerator">Download here</a> instead: </li>
+            <li><em>Please let me know of any other bugs, issues, or possible improvements to this app!</em></li>
+        </ul>
+
     </div>
     <section id="uploadinfo">
         <form>
             <h2>Classlist upload</h2>
             <label for="classlist">Upload your class list and information:</label>
-            <a href="https://macrobee.github.io/git-cloud-storage/grades_template.csv" download="grades_template.csv">Download gradebook template</a>
+            <a href="C:\Users\vitong\Web Design\report_comments/grades_template.csv" download="template.csv">Download
+                gradebook template</a>
             <input type="file" id="course" name="upload" accept=".csv">
 
             <br><label for="courseinfo">Input the course title:</label>
@@ -53,7 +88,7 @@
     </section>
     <section id="comments">
         <h2>Student comments:</h2>
-        <ol></ol>
+        <ol id="commentdisplay"></ol>
     </section>
     <script src="comments.js"></script>
 </body>

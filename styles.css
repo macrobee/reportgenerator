@@ -26,6 +26,43 @@ h1{
     /* padding-bottom: 30px; */
     position: sticky;
 }
+#infomenu{
+    display: inline;
+    position: absolute;
+    box-sizing: border-box;
+    font-size: 2em;
+    font-style: bold;
+    color: #efe9e7;
+    top: 5px;
+    right: 10px;
+    background-color: #52154e;
+    padding: 3px 5px;
+    margin-top: 5px;
+    border-radius: 3px;
+}
+#infomenu:hover{
+    opacity: 70%;
+}
+#infopage{
+    display: none;
+    position: absolute;
+    top: 10px;
+    right: 10%; 
+    width: 55%;
+    height: auto;
+    z-index: 5;
+    background-color: #f9cff2;
+    transition: 0.5s;
+}
+img{
+    margin: auto;
+}
+/* #infomenu:hover + #infopage{
+    display: inline;
+    /* position: absolute; */
+    /* right:20px; */
+    /* top: 60px; */
+/* } */ */
 h2{
     margin-left: 5%;
 }
@@ -105,5 +142,10 @@ div p{
     div{width: 95%;
         margin: 30px auto;
         box-sizing: border-box;}
+    #infomenu{font-size: 1.5em;
+    padding:2px 5px;
+    top:15px;}
+    #infopage{width: 90%;
+    right: 10px;}
     
 }

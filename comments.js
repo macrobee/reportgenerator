@@ -8,6 +8,16 @@ const assignment2 = allinputs[4];
 const skill2 = allinputs[5];
 const isFinal = allinputs[6];
 const sampleComment = document.querySelector('#sample');
+const infoicon = document.querySelector('#infomenu')
+const infopage = document.querySelector("#infopage")
+
+infoicon.addEventListener('mouseenter', function(e){
+    if (infopage.style.display === "none"){
+        infopage.style.display = `inline`;
+    } else {
+        infopage.style.display = `none`;
+    }
+})
 
 class Student {
     constructor(stuName, gender, mark, assignment1, assignment2, improvement) {
@@ -143,20 +153,21 @@ form.addEventListener('submit', function (e) { // event listener for generating 
     const newCourse = new CourseInfo(coursetitle.value, assignment1.value, skill1.value, assignment2.value, skill2.value, isFinal.checked);
     const file = fileupload.files[0];
     const reader = new FileReader();
-
+console.log(newCourse);
     reader.readAsText(file);
     reader.onload = function (e) {
         const text = e.target.result;
         const studentData = csvToArray(text);
         newCourse.stuList = studentData;
 
-        const classList = document.querySelector('ol');
+        const classList = document.querySelector('#commentdisplay');
         while (classList.childNodes.length != 0) { // if comments were already generated, this clears previous comments
             classList.removeChild(classList.lastChild);
         }
 
         for (let student of newCourse.stuList) { //creates list of comments
             let comment = newCourse.createComment(student);
+            console.log(comment);
             let stuComment = document.createElement('li');
             stuComment.innerText = comment;
             classList.appendChild(stuComment);
@@ -171,4 +182,13 @@ let sampleCourse = new CourseInfo(coursetitle.placeholder,assignment1.placeholde
 sampleCourse.stuList = [sampleStudent];
 sampleCourse.chooseDescriptors(sampleStudent);
 sampleComment.textContent = sampleCourse.createComment(sampleStudent);
+
+// coursetitle.addEventListener('input', function(e){
+
+// })
+// const updateSample = function(text) {
+
+// }
+
+
 // sampleComment.addEventListener()
